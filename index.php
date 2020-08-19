@@ -14,6 +14,10 @@
         include_once PATH_ROOT.'/'.$class_name.'.php';
     });
 
+    // load class Route trong core\http
+    $router = new Core\Http\Route();
+    include_once PATH_ROOT.'/app/routes.php';
+
     // Lay url hien tai cua trang web. Mac dinh la /
     $request_url = !empty($_GET['url']) ? '/'.$_GET['url'] : '/';
 
