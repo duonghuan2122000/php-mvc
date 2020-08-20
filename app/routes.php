@@ -6,5 +6,7 @@
      * 
      */
 
-    
+    $router->get('/', function(){
+        echo 'home';
+    });
 ?>

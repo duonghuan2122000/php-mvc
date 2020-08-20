@@ -21,5 +21,9 @@
     // Lay url hien tai cua trang web. Mac dinh la /
     $request_url = !empty($_GET['url']) ? '/'.$_GET['url'] : '/';
 
+    // Lay phuong thuc hien tai cua url dang duoc goi. (GET | POST). Mac dinh la GET.
+    $method_url = !empty($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : 'GET';
+
+    $router->map($request_url, $method_url);
     
 ?>
