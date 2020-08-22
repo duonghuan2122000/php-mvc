@@ -29,8 +29,8 @@ Trong PHP MVC hỗ trợ hai phương thức `GET` và `POST`
 	// Phương thức POST
 	$router->post($url, $action);
 Trong đó: 
-	`$url`: URL 
-	`$action`: hành động khi route được gọi. Có thể là một callback (một hàm) hoặc một phương thức trong controller.
+	- `$url`: URL 
+	- `$action`: hành động khi route được gọi. Có thể là một callback (một hàm) hoặc một phương thức trong controller.
 
 ---
 Đang cập nhật...
