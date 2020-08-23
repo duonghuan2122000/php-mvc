@@ -142,8 +142,20 @@
          */
         private function __call_action_route($action, $params)
         {
+            // Neu $action la mot callback (mot ham).
             if(is_callable($action)){
                 call_user_func_array($action, $params);
+                return;
+            }
+
+            // Neu $action la mot phuong thuc cua controller. 'HomeController@index'.
+            if(is_string($action)){
+                $action = explode('@', $action);
+                $controller_name = 'App\\Controllers\\'.$action[0];
+                $controller = new $controller_name();
+                call_user_func_array([$controller, $action[1]], $params);
+
+                return;
             }
         }
     }

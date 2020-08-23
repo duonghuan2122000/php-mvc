@@ -6,7 +6,9 @@
      * 
      */
 
-    $router->get('/', function(){
-        echo 'home';
-    });
+    // $router->get('/', function(){
+    //     echo 'home';
+    // });
+
+    $router->get('/', 'HomeController@index');
 ?>
