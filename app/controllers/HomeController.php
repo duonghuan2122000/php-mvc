@@ -8,8 +8,9 @@
     namespace App\Controllers;
 
     class HomeController extends Controller {
-        public function index(){
-            echo 'home';
+        public function index()
+        {
+            echo $this->view('profile', ['name' => 'huan']);
         }
     }
 ?>

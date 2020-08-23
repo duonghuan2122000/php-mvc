@@ -8,8 +8,9 @@
      * 
      */
     namespace App\Controllers;
-
-    class Controller {
+    use Core\Http\Controller\BaseController;
+    
+    class Controller extends BaseController {
 
     }
 ?>
