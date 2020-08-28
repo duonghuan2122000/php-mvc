@@ -1,10 +1,11 @@
 <html>
 <head>
-    <title><?=$this->e($title)?></title>
+    <title>Demo</title>
 </head>
 <body>
-
-<?=$this->section('content')?>
+<?php $this->renderSection('sidebar'); ?>
+<br/>
+<?php $this->renderSection('content'); ?>
 
 </body>
 </html>

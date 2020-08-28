@@ -8,8 +8,10 @@
      * 
      */
     namespace Core\Http\Controller;
-    use Core\View\Engine;
-    
+
+use Core\Config\Config;
+use Core\View\Template;
+
     class BaseController {
 
         /**
@@ -20,7 +22,7 @@
 
         public function __construct()
         {
-            $this->__template = new Engine(PATH_ROOT.'/app/views');
+            $this->__template = new Template(PATH_ROOT.'/app/views');
         }
 
         /**
@@ -28,13 +30,24 @@
          * Ham load view
          * 
          * @param string $view_name Ten file view
-         * @param array $args Mang gia tri can truyen tu controller toi view.
+         * @param array $args Cac gia tri can truyen tu controller toi view.
          * 
          * @return string
          */
         protected function view(string $view_name, $args)
         {
-            return $this->__template->render($view_name, $args);
+            try {
+                //code...
+                return $this->__template->render($view_name, $args);
+            } catch (\Throwable $th) {
+                echo 'Error';
+                if(Config::config('DEBUG')){
+                    echo '<pre>';
+                    echo strval($th);
+                    echo '</pre>';
+                }
+            }
+            
         }
     }
 ?>

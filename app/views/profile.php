@@ -1,4 +1,10 @@
-<?php $this->layout('template', ['title' => 'User Profile']) ?>
+<?php $this->layout('template') ?>
 
+<?php $this->section('content'); ?>
 <h1>User Profile</h1>
-<p>Hello, <?=$this->e($name)?></p>
+<p>Hello, <?php echo $name; ?></p>
+<?php $this->end(); ?>
+
+<?php $this->section('sidebar'); ?>
+    <h2>Sidebar</h2>
+<?php $this->end(); ?>

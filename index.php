@@ -14,6 +14,8 @@
         include_once PATH_ROOT.'/'.$class_name.'.php';
     });
 
+    include_once PATH_ROOT.'/app/config/config.php';
+
     // load class Route trong core\http
     $router = new Core\Http\Route();
     include_once PATH_ROOT.'/app/routes.php';
